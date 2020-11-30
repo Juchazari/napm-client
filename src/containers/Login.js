@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../napm-logo.svg';
 import InputGroup from '../components/InputGroup';
 import Button from '@material-ui/core/Button';
 import OAuthButton from '../components/OAuthButton';
@@ -8,16 +9,21 @@ import './Login.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [errorMessage, displayErrorMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    // if(!/\S/.test(email)) {
+    //   console.log("Email does not have some letters in it!")
+    // }
   }
 
   return (
     <div className="Login">
-      <Link className="login-logo" to="/">TBD LOGO</Link>
-      <div className="login-content">
+      <Link className="link-to-home" to="/">
+        <Logo className="logo" />
+      </Link>
+      <div className="entry-card">
         <h1 className="entry-header">Log in to Napm</h1>
         <form onSubmit={handleSubmit}>
           <InputGroup
@@ -44,6 +50,9 @@ function Login() {
         <div className="OAuth-buttons">
           <OAuthButton provider="Google" />
           <OAuthButton provider="Apple" />
+        </div>
+        <div className="forgot-password">
+          <Link to="#forgot-password">Forgot password?</Link>
         </div>
         <div className="link-to-signup">
           <span>Don't have an account?</span>
