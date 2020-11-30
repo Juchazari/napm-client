@@ -1,13 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../napm-logo.svg';
 import Button from '@material-ui/core/Button';
 import './Home.css';
 
 function HomeNavbar() {
   return (
     <nav className="Home-Navbar">
-      <h1 className="logo">TBD LOGO</h1>
+      <Logo style={{width: "100px"}} />
       <div>
         <Button style={{marginRight: "8px"}} component={Link} to="/login">
           Log In
