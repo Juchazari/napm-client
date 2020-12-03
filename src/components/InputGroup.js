@@ -4,7 +4,7 @@ import './InputGroup.css';
 
 function InputGroup({label, type, id, placeholder, value, onChange, revealer, setInputType}) {
 
-  function passwordRevealer() {
+  const passwordRevealer = () =>  {
     return (
       <div className="label-w-revealer">
         <label htmlFor={id}>{label}</label>
