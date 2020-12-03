@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../napm-logo.svg';
 import InputGroup from '../components/InputGroup';
 import Button from '@material-ui/core/Button';
 import OAuthButton from '../components/OAuthButton';
-import './Login.css';
+import './LoginSignup.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -19,12 +19,12 @@ function Login() {
   }
 
   return (
-    <div className="Login">
+    <div className="Login entry-page">
       <Link className="link-to-home" to="/">
         <Logo className="logo" />
       </Link>
       <div className="entry-card">
-        <h1 className="entry-header">Log in to Napm</h1>
+        <h1 className="entry-header">Log in</h1>
         <form onSubmit={handleSubmit}>
           <InputGroup
             label="Email Address"

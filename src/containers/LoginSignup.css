@@ -1,0 +1,88 @@
+.entry-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.entry-page .link-to-home {
+  margin: 40px 0;
+}
+
+.entry-page .logo {
+  width: 175px;
+}
+
+.entry-page .entry-card {
+  max-width: 450px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.15),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+  padding: 50px;
+  margin-bottom: 40px;
+}
+
+.entry-page .entry-card .entry-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #2c2e33;
+}
+
+.entry-page .entry-card .entry-divider {
+  display: block;
+  text-align: center;
+  margin: 24px 0;
+  font-size: 14px;
+  color: #888888;
+}
+
+.entry-page .entry-card .forgot-password {
+  margin: 24px 0 8px 0;
+  text-align: center;
+}
+
+.entry-page .entry-card .forgot-password a {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #888888;
+}
+
+.entry-page .entry-card .link-to-signup,
+.entry-page .entry-card .link-to-login {
+  text-align: center;
+}
+
+.entry-page .entry-card .link-to-login {
+  margin-top: 24px;
+}
+
+.entry-page .entry-card .link-to-signup span,
+.entry-page .entry-card .link-to-login span {
+  font-size: 14px;
+  color: #888888;
+}
+
+.entry-page .entry-card .link-to-signup a,
+.entry-page .entry-card .link-to-login a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #2196f3;
+  margin-left: 8px;
+}
+
+@media all and (max-width: 640px) {
+  .entry-page {
+    background-color: #ffffff;
+  }
+  .entry-page .link-to-home {
+    margin: 16px 0 0 0;
+  }
+  .entry-page .entry-card {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 32px 40px 0 40px;
+  }
+}
