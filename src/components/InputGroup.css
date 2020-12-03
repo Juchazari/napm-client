@@ -17,6 +17,7 @@
 .input-group .label-w-revealer svg {
   width: 2em;
   cursor: pointer;
+  user-select: none;
 }
 
 .input-group .entry-inputfield {
