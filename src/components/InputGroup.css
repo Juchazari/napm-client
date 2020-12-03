@@ -8,6 +8,17 @@
   margin-bottom: 8px;
 }
 
+.input-group .label-w-revealer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group .label-w-revealer svg {
+  width: 2em;
+  cursor: pointer;
+}
+
 .input-group .entry-inputfield {
   -webkit-appearance: none;
   width: 100%;
