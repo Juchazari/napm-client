@@ -1,8 +1,12 @@
 import React from 'react';
+import Sidebar from '../components/Sidebar';
+import './Dashboard.css';
 
 function Dashboard() {
   return (
-    <h1>This is the dashboard page</h1>
+    <div className="Dashboard">
+      <Sidebar />
+    </div>
   );
 }
 
