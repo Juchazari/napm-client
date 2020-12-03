@@ -1,0 +1,74 @@
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  background-color: #2c2e33;
+  color: #ffffff;
+  box-shadow: 2px 0px 2px -1px rgba(0, 0, 0, 0.2), 4px 0px 3px -1px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: width 0.2s;
+}
+
+.Sidebar .sidebar-icon {
+  width: 1.25em;
+  height: 1.25em;
+  cursor: pointer;
+}
+
+.Sidebar .item-text {
+  margin-left: 36px;
+  position: fixed;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 2px solid #44474e;
+}
+
+.sidebar-header .logo {
+  width: 65px;
+}
+
+.sidebar-items .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sidebar-items .item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-controls .logout {
+  cursor: pointer;
+}
+
+/* ---- Collapsed Sidebar CSS ---- */
+
+.Sidebar.sidebar-collapsed {
+  width: 52px;
+}
+
+.sidebar-collapsed .logo,
+.sidebar-collapsed .item-text {
+  display: none;
+}
