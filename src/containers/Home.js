@@ -12,7 +12,7 @@ function HomeNavbar() {
         <Button style={{marginRight: "8px"}} component={Link} to="/login">
           Log In
         </Button>
-        <Button variant="contained" color="primary" component={Link} to="/signup">
+        <Button variant="contained" color="primary" disableElevation component={Link} to="/signup">
           Sign Up
         </Button>
       </div>
