@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useCookies } from 'react-cookie';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../napm-logo-light.svg';
 import { RiMenuLine, RiSettings3Fill, RiLogoutBoxRFill } from 'react-icons/ri';
@@ -9,17 +8,17 @@ import { HiBell } from 'react-icons/hi';
 import './Sidebar.css';
 
 function Sidebar() {
-  const [cookies, setCookie, removeCookie] = useCookies(['sidebar-collapsed']);
-  const [isExpanded, setIsExpanded] = useState(cookies['sidebar-collapsed'] ? false : true);
+  const sidebarCollapsed = localStorage.getItem('sidebar-collapsed');
+  const [isExpanded, setIsExpanded] = useState(sidebarCollapsed ? false : true);
 
   const handleToggler = () => {
     if (isExpanded) {
       setIsExpanded(false);
-      setCookie('sidebar-collapsed', true, { path: '/' });
+      localStorage.setItem('sidebar-collapsed', true);
       return;
     }
     setIsExpanded(true);
-    removeCookie('sidebar-collapsed', { path: '/' });
+    localStorage.removeItem('sidebar-collapsed');
   };
 
   return (
