@@ -8,6 +8,7 @@ import Projects from './containers/Projects';
 import Insights from './containers/Insights';
 import Inbox from './containers/Inbox';
 import Settings from './containers/Settings';
+import NotFound from './containers/NotFound';
 
 export function DashboardRoutes() {
   return (
@@ -42,6 +43,9 @@ export function AppRoutes() {
       </Route>
       <Route path="/dashboard">
         <Dashboard />
+      </Route>
+      <Route>
+        <NotFound />
       </Route>
     </Switch>
   );
