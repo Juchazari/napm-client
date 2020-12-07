@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as Logo } from '../napm-logo-light.svg';
 import { RiMenuLine, RiSettings3Fill, RiLogoutBoxRFill } from 'react-icons/ri';
 import { MdDashboard } from 'react-icons/md';
 import { IoMdStats } from 'react-icons/io';
 import { HiBell } from 'react-icons/hi';
+import { ReactComponent as Logo } from '../napm-logo-light.svg';
 import './Sidebar.css';
 
-function Sidebar() {
-  const sidebarCollapsed = localStorage.getItem('sidebar-collapsed');
-  const [isExpanded, setIsExpanded] = useState(sidebarCollapsed ? false : true);
+function Sidebar({isExpanded, setIsExpanded}) {
 
   const handleToggler = () => {
     if (isExpanded) {
