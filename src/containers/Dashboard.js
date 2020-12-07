@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import { DashboardRoutes } from '../Routes';
+import { DashboardRoutes as Routes } from '../Routes';
 import './Dashboard.css';
 
 function Dashboard() {
+  const sidebarCollapsed = localStorage.getItem('sidebar-collapsed');
+  const [isExpanded, setIsExpanded] = useState(sidebarCollapsed ? false : true);
+
   return (
     <div className="Dashboard">
-      <Sidebar />
-      <div className="dashboard-content-container">
-        <DashboardRoutes />
+      <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+      <div className={isExpanded ? "content-container" : "content-container sidebar-collapsed"}>
+        <Routes />
       </div>
     </div>
   );
