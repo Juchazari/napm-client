@@ -1,11 +1,11 @@
 import React from 'react';
-import { AppRoutes } from './Routes';
+import { AppRoutes as Routes } from './Routes';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <AppRoutes />
+      <Routes />
     </div>
   );
 }
