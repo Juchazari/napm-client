@@ -9,24 +9,10 @@ import {
   RiNotification3Fill
 } from 'react-icons/ri';
 import { ReactComponent as Logo } from '../napm-logo-light.svg';
-import { makeStyles } from '@material-ui/core/styles';
-import Tooltip from '@material-ui/core/Tooltip';
+import ReactTooltip from 'react-tooltip';
 import './Sidebar.css';
 
-function Item({title, link, icon, ttActive}) {
-  const classes = useStyles();
-  return (
-    <Tooltip title={title} disableHoverListener={ttActive} classes={classes} placement="right" arrow>
-      <NavLink to={link} className="item" activeClassName="dash-active" exact>
-        {icon}
-        <span className="item-text">{title}</span>
-      </NavLink>
-    </Tooltip>
-  );
-}
-
 function Sidebar({isExpanded, setIsExpanded}) {
-  const classes = useStyles();
   let { url } = useRouteMatch();
 
   const handleToggler = () => {
@@ -46,45 +32,30 @@ function Sidebar({isExpanded, setIsExpanded}) {
         <Logo className="logo item-text" />
       </div>
       <div className="sidebar-items">
-        <Item
-          title="Home"
-          link={`${url}`}
-          icon={<RiDashboardFill className="sidebar-icon" />}
-          ttActive={isExpanded ? true : false}
-        />
-        <Item
-          title="Insights"
-          link={`${url}/insights`}
-          icon={<RiPieChartFill className="sidebar-icon" />}
-          ttActive={isExpanded ? true : false}
-        />
-        <Item
-          title="Inbox"
-          link={`${url}/inbox`}
-          icon={<RiNotification3Fill className="sidebar-icon" />}
-          ttActive={isExpanded ? true : false}
-        />
+        <NavLink to={`${url}`} data-tip="Home" className="item" activeClassName="dash-active" exact>
+          <RiDashboardFill className="sidebar-icon" />
+          <span className="item-text">Home</span>
+        </NavLink>
+        <NavLink to={`${url}/insights`} data-tip="Insights" className="item" activeClassName="dash-active">
+          <RiPieChartFill className="sidebar-icon" />
+          <span className="item-text">Insights</span>
+        </NavLink>
+        <NavLink to={`${url}/inbox`} data-tip="Inbox" className="item" activeClassName="dash-active">
+          <RiNotification3Fill className="sidebar-icon" />
+          <span className="item-text">Inbox</span>
+        </NavLink>
       </div>
       <div className="sidebar-controls sidebar-items">
-        <Item
-          title="Settings"
-          link={`${url}/settings`}
-          icon={<RiSettings3Fill className="sidebar-icon" />}
-          ttActive={isExpanded ? true : false}
-        />
-        <Tooltip
-          title="Log out"
-          disableHoverListener={isExpanded ? true : false}
-          classes={classes}
-          placement="right"
-          arrow
-        >
-          <div className="item logout">
-            <RiLogoutBoxRFill className="sidebar-icon" />
-            <span className="item-text">Log out</span>
-          </div>
-        </Tooltip>
+        <NavLink to={`${url}/settings`} data-tip="Settings" className="item" activeClassName="dash-active">
+          <RiSettings3Fill className="sidebar-icon" />
+          <span className="item-text">Settings</span>
+        </NavLink>
+        <div data-tip="Log out" className="item logout">
+          <RiLogoutBoxRFill className="sidebar-icon" />
+          <span className="item-text">Log out</span>
+        </div>
       </div>
+      {!isExpanded ? <ReactTooltip effect="solid" className="sidebar-tooltips" place="right" /> : null}
     </div>
   );
 }
