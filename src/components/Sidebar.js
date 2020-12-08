@@ -1,13 +1,42 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { RiMenuLine, RiSettings3Fill, RiLogoutBoxRFill } from 'react-icons/ri';
-import { MdDashboard } from 'react-icons/md';
-import { IoMdStats } from 'react-icons/io';
-import { HiBell } from 'react-icons/hi';
+import { NavLink, useRouteMatch } from 'react-router-dom';
+import {
+  RiMenuLine,
+  RiDashboardFill,
+  RiSettings3Fill,
+  RiLogoutBoxRFill,
+  RiPieChartFill,
+  RiNotification3Fill
+} from 'react-icons/ri';
 import { ReactComponent as Logo } from '../napm-logo-light.svg';
+import { makeStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
 import './Sidebar.css';
 
+const useStyles = makeStyles({
+  arrow: {
+    color: '#1e272e',
+  },
+  tooltip: {
+    backgroundColor: '#1e272e'
+  },
+});
+
+function Item({title, link, icon, ttActive}) {
+  const classes = useStyles();
+  return (
+    <Tooltip title={title} disableHoverListener={ttActive} classes={classes} placement="right" arrow>
+      <NavLink to={link} className="item" activeClassName="dash-active" exact>
+        {icon}
+        <span className="item-text">{title}</span>
+      </NavLink>
+    </Tooltip>
+  );
+}
+
 function Sidebar({isExpanded, setIsExpanded}) {
+  const classes = useStyles();
+  let { url } = useRouteMatch();
 
   const handleToggler = () => {
     if (isExpanded) {
@@ -20,37 +49,50 @@ function Sidebar({isExpanded, setIsExpanded}) {
   };
 
   return (
-    <div className={isExpanded ? "Sidebar" : "Sidebar sidebar-collapsed"}>
+    <div className={isExpanded ? "Sidebar" : "Sidebar collapsed"}>
       <div className="sidebar-header">
-        <RiMenuLine 
-          onClick={handleToggler}
-          className="sidebar-icon"
-        />
+        <RiMenuLine onClick={handleToggler} className="sidebar-icon" />
         <Logo className="logo item-text" />
       </div>
       <div className="sidebar-items">
-        <NavLink to="/dashboard" className="item" activeClassName="dash-active" exact>
-          <MdDashboard className="sidebar-icon" />
-          <span className="item-text">Home</span>
-        </NavLink>
-        <NavLink to="/dashboard/insights" className="item" activeClassName="dash-active">
-          <IoMdStats className="sidebar-icon" />
-          <span className="item-text">Insights</span>
-        </NavLink>
-        <NavLink to="/dashboard/inbox" className="item" activeClassName="dash-active">
-          <HiBell className="sidebar-icon" />
-          <span className="item-text">Inbox</span>
-        </NavLink>
+        <Item
+          title="Home"
+          link={`${url}`}
+          icon={<RiDashboardFill className="sidebar-icon" />}
+          ttActive={isExpanded ? true : false}
+        />
+        <Item
+          title="Insights"
+          link={`${url}/insights`}
+          icon={<RiPieChartFill className="sidebar-icon" />}
+          ttActive={isExpanded ? true : false}
+        />
+        <Item
+          title="Inbox"
+          link={`${url}/inbox`}
+          icon={<RiNotification3Fill className="sidebar-icon" />}
+          ttActive={isExpanded ? true : false}
+        />
       </div>
-      <div className="dashboard-controls sidebar-items">
-        <NavLink to="/dashboard/settings" className="item" activeClassName="dash-active">
-          <RiSettings3Fill className="sidebar-icon" />
-          <span className="item-text">Settings</span>
-        </NavLink>
-        <div className="item logout">
-          <RiLogoutBoxRFill className="sidebar-icon" />
-          <span className="item-text">Log out</span>
-        </div>
+      <div className="sidebar-controls sidebar-items">
+        <Item
+          title="Settings"
+          link={`${url}/settings`}
+          icon={<RiSettings3Fill className="sidebar-icon" />}
+          ttActive={isExpanded ? true : false}
+        />
+        <Tooltip
+          title="Log out"
+          disableHoverListener={isExpanded ? true : false}
+          classes={classes}
+          placement="right"
+          arrow
+        >
+          <div className="item logout">
+            <RiLogoutBoxRFill className="sidebar-icon" />
+            <span className="item-text">Log out</span>
+          </div>
+        </Tooltip>
       </div>
     </div>
   );
