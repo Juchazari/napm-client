@@ -9,7 +9,7 @@ function NotFound() {
       <Link to="/" style={{marginBottom: '16px'}}>
         <Logo style={{width: '150px'}} />
       </Link>
-      <h1>Sorry, that page doesn't exist!</h1>
+      <h1 style={{fontWeight: '400'}}>Sorry, that page doesn't exist!</h1>
     </div>
   );
 }
