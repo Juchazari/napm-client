@@ -13,15 +13,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import './Sidebar.css';
 
-const useStyles = makeStyles({
-  arrow: {
-    color: '#1e272e',
-  },
-  tooltip: {
-    backgroundColor: '#1e272e'
-  },
-});
-
 function Item({title, link, icon, ttActive}) {
   const classes = useStyles();
   return (
