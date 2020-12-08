@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Redirect, Switch, useRouteMatch } from 'react-router-dom';
 import Home from './containers/Home';
 import Login from './containers/Login';
 import Signup from './containers/Signup';
@@ -11,19 +11,24 @@ import Settings from './containers/Settings';
 import NotFound from './containers/NotFound';
 
 export function DashboardRoutes() {
+  let { path } = useRouteMatch();
+
   return (
     <Switch>
-      <Route exact path="/dashboard">
+      <Route exact path={`${path}`}>
         <Projects />
       </Route>
-      <Route exact path="/dashboard/insights">
+      <Route path={`${path}/insights`}>
         <Insights />
       </Route>
-      <Route exact path="/dashboard/inbox">
+      <Route path={`${path}/inbox`}>
         <Inbox />
       </Route>
-      <Route exact path="/dashboard/settings">
+      <Route path={`${path}/settings`}>
         <Settings />
+      </Route>
+      <Route>
+        <Redirect to={`${path}`} />
       </Route>
     </Switch>
   );
@@ -35,10 +40,10 @@ export function AppRoutes() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/login">
+      <Route path="/login">
         <Login />
       </Route>
-      <Route exact path="/signup">
+      <Route path="/signup">
         <Signup />
       </Route>
       <Route path="/dashboard">
