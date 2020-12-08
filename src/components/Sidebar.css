@@ -12,12 +12,12 @@
   color: #ffffff;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: width 0.2s;
 }
 
 .Sidebar .sidebar-icon {
   width: 1.25em;
   height: 1.25em;
+  margin-right: 12px;
   cursor: pointer;
   user-select: none;
   -moz-user-select: none;
@@ -25,8 +25,6 @@
 
 .Sidebar .item-text {
   font-size: 15px;
-  position: fixed;
-  margin-left: 32px;
 }
 
 .sidebar-header {
@@ -58,7 +56,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.dashboard-controls {
+.sidebar-controls {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -66,17 +64,21 @@
   height: 100%;
 }
 
-.dashboard-controls .logout {
+.sidebar-controls .logout {
   cursor: pointer;
 }
 
 /* ---- Collapsed Sidebar CSS ---- */
 
-.Sidebar.sidebar-collapsed {
+.Sidebar.collapsed {
   width: 52px;
 }
 
-.sidebar-collapsed .logo,
-.sidebar-collapsed .item-text {
+.Sidebar.collapsed .sidebar-icon {
+  margin-right: 0;
+}
+
+.Sidebar.collapsed .logo,
+.Sidebar.collapsed .item-text {
   display: none;
 }
