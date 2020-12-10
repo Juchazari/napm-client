@@ -9,12 +9,17 @@ function InputGroup({label, type, id, placeholder, value, onChange, revealer, se
       <div className="label-w-revealer">
         <label htmlFor={id}>{label}</label>
         <span>
-          {type === "password" 
-            ? 
-              <AiOutlineEye onClick={() => setInputType('text')}/>
-            : 
-              <AiFillEye onClick={() => setInputType('password')}/>
-          }
+          {type === "password" ? (
+            <AiOutlineEye
+              onClick={() => setInputType('text')}
+              className="eyeIcon"
+            />
+          ) : (
+            <AiFillEye
+              onClick={() => setInputType('password')}
+              className="eyeIcon"
+            />
+          )}
         </span>
       </div>
     );
