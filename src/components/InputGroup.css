@@ -25,15 +25,16 @@
   width: 100%;
   font-size: 16px;
   outline: none;
-  border: 2px solid #e0e6e8;
+  border: 1px solid #e0e6e8;
   border-radius: 4px;
   padding: 8px 16px;
   color: #888888;
-  transition: border-color 0.2s;
+  transition: box-shadow 0.2s;
 }
   
 .input-group .entry-inputfield:focus {
-  border-color: #72bfff;
+  /* border-color: #72bfff; */
+  box-shadow: 0 0 0 0.2rem rgba(44, 46, 51, 0.1);
 }
 
 .input-group .entry-inputfield::placeholder {
