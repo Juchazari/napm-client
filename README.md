@@ -1,3 +1,13 @@
 # Napm
+Napm was created to make project managing simple and easy. With much inspiration from other project managers such as Trello and Asana but with the mindset of simple, full customization and theming.
 
-> Not another project manager, here to organize and manage your projects!
+### Napm is short for Not another project manager
+* Manage your projects big or small
+* Collaborate with others
+* Unique experience with full customization and theming
+
+### Technologies used to build Napm:
+* AWS API Gateway, Lambda, Cognito, DynamoDB, S3
+* React
+* React-router
+* Styled-components
