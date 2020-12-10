@@ -8,7 +8,7 @@ import {
   RiSettings3Fill as SettingsIcon,
   RiLogoutBoxRFill as LogoutIcon
 } from 'react-icons/ri';
-import { ReactComponent as Logo } from '../napm-logo-light.svg';
+import { ReactComponent as Logo } from '../assets/images/logo-light.svg';
 import ReactTooltip from 'react-tooltip';
 import './Sidebar.css';
 

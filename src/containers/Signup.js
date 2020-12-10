@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../napm-logo.svg';
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import InputGroup from '../components/InputGroup';
-import Button from '@material-ui/core/Button';
-import OAuthButton from '../components/OAuthButton';
 import './LoginSignup.css';
 
 function Signup() {
@@ -50,14 +48,14 @@ function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button type="submit" variant="contained" color="primary" fullWidth disableElevation>
+          <button>
             Sign up
-          </Button>
+          </button>
         </form>
         <span className="entry-divider">OR</span>
         <div className="OAuth-buttons">
-          <OAuthButton provider="Google" />
-          <OAuthButton provider="Apple" />
+          <button>Google</button>
+          <button>Apple</button>
         </div>
         <div className="link-to-login">
           <span>Already have an account?</span>

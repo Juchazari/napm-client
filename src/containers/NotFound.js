@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../napm-logo.svg';
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import './NotFound.css';
 
 function NotFound() {
