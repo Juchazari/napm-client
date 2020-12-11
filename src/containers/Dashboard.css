@@ -1,8 +1,0 @@
-.content-container {
-  padding-left: 200px;
-  transition: padding-left 0.2s;
-}
-
-.content-container.sidebar-collapsed {
-  padding-left: 52px;
-}
