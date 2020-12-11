@@ -1,14 +1,15 @@
 import React from 'react';
 import { Route, Redirect, Switch, useRouteMatch } from 'react-router-dom';
-import Home from './containers/Home';
-import Login from './containers/Login';
-import Signup from './containers/Signup';
-import Dashboard from './containers/Dashboard';
-import Projects from './containers/Projects';
-import Insights from './containers/Insights';
-import Inbox from './containers/Inbox';
-import Settings from './containers/Settings';
-import NotFound from './containers/NotFound';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
+import Dashboard from './pages/Dashboard';
+import Projects from './pages/Projects';
+import Insights from './pages/Insights';
+import Inbox from './pages/Inbox';
+import Settings from './pages/Settings';
+import NotFound from './pages/NotFound';
 
 export function DashboardRoutes() {
   let { path } = useRouteMatch();
@@ -45,6 +46,9 @@ export function AppRoutes() {
       </Route>
       <Route path="/signup">
         <Signup />
+      </Route>
+      <Route path="/forgot">
+        <ForgotPassword />
       </Route>
       <Route path="/dashboard">
         <Dashboard />
