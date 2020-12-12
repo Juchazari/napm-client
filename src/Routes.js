@@ -3,7 +3,7 @@ import { Route, Redirect, Switch, useRouteMatch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import ForgotPassword from './pages/ForgotPassword';
+import Forgot from './pages/Forgot';
 import Dashboard from './pages/Dashboard';
 import Projects from './pages/Projects';
 import Insights from './pages/Insights';
@@ -48,7 +48,7 @@ export function AppRoutes() {
         <Signup />
       </Route>
       <Route path="/forgot">
-        <ForgotPassword />
+        <Forgot />
       </Route>
       <Route path="/dashboard">
         <Dashboard />
