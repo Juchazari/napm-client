@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import ReactTooltip from 'react-tooltip';
 
 const CollapsedSidebarStyles = css`
@@ -15,7 +15,7 @@ const NavItemStyles = css`
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s;
-  &:hover { background-color: rgba(255, 255, 255, 0.1); }
+  &:hover { background-color: rgba(0, 0, 0, 0.2); }
 `;
 
 const MainSidebar = styled.div`
@@ -63,7 +63,7 @@ const Controls = styled.div`
 
 const NavItemLink = styled(NavLink)`
   ${NavItemStyles}
-  &.active { background-color: rgba(255, 255, 255, 0.1); }
+  &.active { background-color: rgba(0, 0, 0, 0.2); }
 `;
 
 const NavItem = styled.div`
