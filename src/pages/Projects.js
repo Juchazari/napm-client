@@ -7,6 +7,7 @@ const ProjectsPage = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: #fbfbfb;
 `;
 
 function Projects() {
