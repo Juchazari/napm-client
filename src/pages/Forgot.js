@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import styled from 'styled-components';
-import FormCard from '../components/FormCard';
-import Form from '../components/Form';
-import Button from '../components/Button';
+import { Link } from 'react-router-dom';
+import { EntryBox, EntryTitle, EntryFooter } from '../components/Entry';
+import { InputGroup, Label, Input } from '../components/FormElements';
+import { Button } from '../components/Button';
+import Logo from '../components/Logo';
 
 const Page = styled.div`
   display: flex;
@@ -14,9 +14,8 @@ const Page = styled.div`
   background-color: #f8f8f8;
 `;
 
-const PageHeader = styled(Link)`
+const HomeLink = styled(Link)`
   margin: 40px 0;
-  svg { width: 130px; }
 `;
 
 const LoginLink = styled(Link)`
@@ -32,30 +31,30 @@ function Forgot() {
 
   return (
     <Page>
-      <PageHeader to="/">
-        <Logo />
-      </PageHeader>
-      <FormCard>
-        <FormCard.Header>Forgot password?</FormCard.Header>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="forgotpw-email-input">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Input
+      <HomeLink to="/">
+        <Logo size="130" />
+      </HomeLink>
+      <EntryBox>
+        <EntryTitle>Forgot password?</EntryTitle>
+        <form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Label>Email Address</Label>
+            <Input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoFocus
             />
-          </Form.Group>
+          </InputGroup>
           <Button type="submit" full>Send instructions</Button>
-        </Form>
-        <FormCard.Footer>
+        </form>
+        <EntryFooter>
           <span>
             Return to log in?
             <LoginLink to="/login">Log in</LoginLink>
           </span>
-        </FormCard.Footer>
-      </FormCard>
+        </EntryFooter>
+      </EntryBox>
     </Page>
   );
 }

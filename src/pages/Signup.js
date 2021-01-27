@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import { ReactComponent as Logo } from '../assets/images/logo.svg';
-import styled from 'styled-components';
-import FormCard from '../components/FormCard';
-import Form from '../components/Form';
-import Button from '../components/Button';
+import { EntryBox, EntryTitle, EntryFooter } from '../components/Entry';
+import { InputGroup, Label, Input } from '../components/FormElements';
+import { Button, GoogleButton } from '../components/Button';
+import Divider from '../components/Divider';
+import Logo from '../components/Logo';
 
 const SignupPage = styled.div`
   display: flex;
@@ -15,9 +16,8 @@ const SignupPage = styled.div`
   background-color: #f8f8f8;
 `;
 
-const PageHeader = styled(Link)`
+const HomeLink = styled(Link)`
   margin: 40px 0;
-  svg { width: 130px; }
 `;
 
 const LoginLink = styled(Link)`
@@ -35,55 +35,59 @@ function Signup() {
 
   return (
     <SignupPage>
-      <PageHeader to="/">
-        <Logo />
-      </PageHeader>
-      <FormCard>
-        <FormCard.Header>
+      <HomeLink to="/">
+        <Logo size="130" />
+      </HomeLink>
+      <EntryBox>
+        <EntryTitle>
           Sign up
-        </FormCard.Header>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Label>Full Name</Form.Label>
-            <Form.Input
+        </EntryTitle>
+        <form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Label>Full Name</Label>
+            <Input
               type="text"
               placeholder="John Doe"
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
+              required
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Email Address</Form.Label>
-            <Form.Input
+          </InputGroup>
+          <InputGroup>
+            <Label>Email Address</Label>
+            <Input
               type="text"
               placeholder="name@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Password</Form.Label>
-            <Form.Input
+          </InputGroup>
+          <InputGroup>
+            <Label>Password</Label>
+            <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
-          </Form.Group>
+          </InputGroup>
           <Button type="submit" full>Sign up</Button>
-        </Form>
-        <FormCard.Divider />
-        <Button icon={<FcGoogle />} colorScheme="google" full>
+        </form>
+        <Divider />
+        <GoogleButton full>
+          <FcGoogle />
           Continue with Google
-        </Button>
-        <FormCard.Footer>
+        </GoogleButton>
+        <EntryFooter>
           <span>
             Already have an account?
             <LoginLink to="/login">Log in</LoginLink>
           </span>
-        </FormCard.Footer>
-      </FormCard>
+        </EntryFooter>
+      </EntryBox>
     </SignupPage>
   );
 }

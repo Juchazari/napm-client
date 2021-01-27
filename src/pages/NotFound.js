@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/images/logo.svg';
+import { ReactComponent as Logo } from '../assets/logo.svg';
 
 const Container = styled.div`
   min-height: 100vh;

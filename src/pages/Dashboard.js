@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import styled from 'styled-components';
 import Sidebar from '../components/Sidebar';
 import { DashboardRoutes as Routes } from '../Routes';
 
-const ContentContainer = styled.div`
-  padding-left: ${props => props.isExpanded ? "200px" : "52px"};
-  transition: padding-left 0.2s;
+const Content = styled.div`
+  padding-left: ${props => (props.isExpanded ? "200px" : "52px")};
 `;
 
 function Dashboard() {
-  const sidebarCollapsed = localStorage.getItem('sidebar-collapsed');
-  const [isExpanded, setIsExpanded] = useState(sidebarCollapsed ? false : true);
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  useEffect(() => {
+    const sidebarState = localStorage.getItem('sidebarState');
+    if (sidebarState) setIsExpanded(JSON.parse(sidebarState));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('sidebarState', JSON.stringify(isExpanded));
+  }, [isExpanded]);
 
   return (
-    <div className="Dashboard">
+    <Fragment>
       <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
-      <ContentContainer isExpanded={isExpanded}>
+      <Content isExpanded={isExpanded}>
         <Routes />
-      </ContentContainer>
-    </div>
+      </Content>
+    </Fragment>
   );
 }
 

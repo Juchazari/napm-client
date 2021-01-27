@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import { ReactComponent as Logo } from '../assets/images/logo.svg';
-import styled from 'styled-components';
-import FormCard from '../components/FormCard';
-import Form from '../components/Form';
-import Button from '../components/Button';
+import { EntryBox, EntryTitle, EntryFooter } from '../components/Entry';
+import { InputGroup, Label, Input } from '../components/FormElements';
+import { Button, GoogleButton } from '../components/Button';
+import Divider from '../components/Divider';
+import Logo from '../components/Logo';
 
 const LoginPage = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   background-color: #f8f8f8;
 `;
 
-const PageHeader = styled(Link)`
+const HomeLink = styled(Link)`
   margin: 40px 0;
-  svg { width: 130px; }
 `;
 
 const ForgotLink = styled(Link)`
@@ -39,17 +39,17 @@ function Login() {
 
   return (
     <LoginPage>
-      <PageHeader to="/">
-        <Logo />
-      </PageHeader>
-      <FormCard>
-        <FormCard.Header>
+      <HomeLink to="/">
+        <Logo size="130" />
+      </HomeLink>
+      <EntryBox>
+        <EntryTitle>
           Log in
-        </FormCard.Header>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="login-email">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Input
+        </EntryTitle>
+        <form onSubmit={handleSubmit}>
+          <InputGroup>
+            <Label>Email Address</Label>
+            <Input
               type="text"
               placeholder="name@email.com"
               value={email}
@@ -57,30 +57,32 @@ function Login() {
               autoFocus
               required
             />
-          </Form.Group>
-          <Form.Group controlId="login-password">
-            <Form.Label>Password</Form.Label>
-            <Form.Input
+          </InputGroup>
+          <InputGroup>
+            <Label>Password</Label>
+            <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
-          </Form.Group>
+          </InputGroup>
           <Button type="submit" full>Log in</Button>
-        </Form>
-        <FormCard.Divider />
-        <Button icon={<FcGoogle />} colorScheme="google" full>
+        </form>
+        <Divider />
+        <GoogleButton full>
+          <FcGoogle />
           Continue with Google
-        </Button>
-        <FormCard.Footer>
+        </GoogleButton>
+        <EntryFooter>
           <ForgotLink to="/forgot">Forgot password?</ForgotLink>
           <span>
             Don't have an account?
             <SignupLink to="/signup">Sign up</SignupLink>
           </span>
-        </FormCard.Footer>
-      </FormCard>
+        </EntryFooter>
+      </EntryBox>
     </LoginPage>
   );
 }
