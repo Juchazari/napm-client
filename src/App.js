@@ -1,8 +1,11 @@
 import React from 'react';
-import { AppRoutes as Routes } from './Routes';
+import LandingRoutes from './routes/LandingRoutes';
+import Dashboard from './pages/Dashboard';
 
 function App() {
-  return <Routes />;
+  const isAuthenticated = true;
+
+  return isAuthenticated ? <Dashboard /> : <LandingRoutes />;
 }
 
 export default App;
