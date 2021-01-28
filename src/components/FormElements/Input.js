@@ -10,7 +10,7 @@ export const Input = styled.input`
   transition: box-shadow 0.2s;
 
   &:focus {
-    box-shadow: 0 0 0 2px rgb(169, 172, 255, 0.5);
+    box-shadow: 0 0 0 2px #a6d5fa;
   }
 
   &::placeholder {
