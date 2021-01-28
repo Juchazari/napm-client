@@ -4,16 +4,12 @@ import styled from 'styled-components';
 const Svg = styled.svg`
   width: ${props => (props.size ? `${props.size}px` : '65px')};
 
-  .icon-box {
+  .icon-box, .letter {
     fill: ${props => (props.light ? '#ffffff' : '#2c2e33')};
   }
 
   .icon-minis {
     fill: ${props => (props.light ? '#2c2e33' : '#ffffff')};
-  }
-
-  .letter {
-    fill: ${props => (props.light ? '#ffffff' : '#2c2e33')};
   }
 `;
 
