@@ -21,6 +21,16 @@ export const Button = styled.button`
   }
 `;
 
+export const OutlineButton = styled(Button)`
+  background-color: #ffffff;
+  border: 1px solid #2c2e33;
+  color: #333;
+
+  &:hover {
+    background-color: #f9f9f9;
+  }
+`;
+
 export const GoogleButton = styled(Button)`
   display: inline-flex;
   justify-content: center;
