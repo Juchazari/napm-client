@@ -48,23 +48,25 @@ function Login() {
         </EntryTitle>
         <form onSubmit={handleSubmit}>
           <InputGroup>
-            <Label>Email Address</Label>
+            <Label htmlFor="login-email">Email Address</Label>
             <Input
               type="text"
               placeholder="name@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              id="login-email"
               autoFocus
               required
             />
           </InputGroup>
           <InputGroup>
-            <Label>Password</Label>
+            <Label htmlFor="login-password">Password</Label>
             <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              id="login-password"
               required
             />
           </InputGroup>

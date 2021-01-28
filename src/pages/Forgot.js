@@ -38,11 +38,12 @@ function Forgot() {
         <EntryTitle>Forgot password?</EntryTitle>
         <form onSubmit={handleSubmit}>
           <InputGroup>
-            <Label>Email Address</Label>
+            <Label htmlFor="forgot-email">Email Address</Label>
             <Input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              id="forgot-email"
               autoFocus
             />
           </InputGroup>

@@ -44,33 +44,36 @@ function Signup() {
         </EntryTitle>
         <form onSubmit={handleSubmit}>
           <InputGroup>
-            <Label>Full Name</Label>
+            <Label htmlFor="signup-name">Full Name</Label>
             <Input
               type="text"
               placeholder="John Doe"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              id="signup-name"
               autoFocus
               required
             />
           </InputGroup>
           <InputGroup>
-            <Label>Email Address</Label>
+            <Label htmlFor="signup-email">Email Address</Label>
             <Input
               type="text"
               placeholder="name@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              id="signup-email"
               required
             />
           </InputGroup>
           <InputGroup>
-            <Label>Password</Label>
+            <Label htmlFor="signup-password">Password</Label>
             <Input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              id="signup-password"
               required
             />
           </InputGroup>
