@@ -3,7 +3,7 @@ import LandingRoutes from './routes/LandingRoutes';
 import Dashboard from './pages/Dashboard';
 
 function App() {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return isAuthenticated ? <Dashboard /> : <LandingRoutes />;
 }
