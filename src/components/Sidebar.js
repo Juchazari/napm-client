@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import {
-  RiDashboardFill as HomeIcon,
+  RiDashboardFill as DashboardIcon,
   RiSettings3Fill as SettingsIcon,
   RiLogoutBoxRFill as LogoutIcon
 } from 'react-icons/ri';
@@ -12,7 +12,7 @@ import ReactTooltip from 'react-tooltip';
 // RiPieChartFill
 // RiNotification3Fill
 
-const SidebarNav = styled.nav`
+const StyledSidebar = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -34,11 +34,12 @@ const SidebarNav = styled.nav`
 const NavItem = styled(NavLink)`
   display: flex;
   align-items: center;
+  border: none;
   padding: 16px 24px;
+  background-color: transparent;
   color: inherit;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.2s;
 
   &:hover, &.active {
     background-color: #1a2127;
@@ -62,18 +63,18 @@ const ToolTip = styled(ReactTooltip)`
 
 function Sidebar() {
   return (
-    <SidebarNav>
+    <StyledSidebar>
       <NavItem to="/" data-tip="Home" activeClassName="active" exact>
-        <HomeIcon />
+        <DashboardIcon />
       </NavItem>
       <NavItem to="/settings" data-tip="Settings" activeClassName="active">
         <SettingsIcon />
       </NavItem>
-      <NavItem as="div" data-tip="Log out">
+      <NavItem as="button" data-tip="Log out">
         <LogoutIcon />
       </NavItem>
       <ToolTip effect="solid" place="right" />
-    </SidebarNav>
+    </StyledSidebar>
   );
 }
 
