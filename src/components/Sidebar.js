@@ -1,19 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import ReactTooltip from 'react-tooltip';
 import {
-  RiMenuLine as Toggler,
   RiDashboardFill as HomeIcon,
-  RiPieChartFill as InsightsIcon,
-  RiNotification3Fill as InboxIcon,
   RiSettings3Fill as SettingsIcon,
   RiLogoutBoxRFill as LogoutIcon
 } from 'react-icons/ri';
+import ReactTooltip from 'react-tooltip';
 
-const Text = styled.p`
-  font-size: 15px;
-`;
+// RiMenuLine
+// RiPieChartFill
+// RiNotification3Fill
 
 const SidebarNav = styled.nav`
   position: fixed;
@@ -21,50 +18,34 @@ const SidebarNav = styled.nav`
   left: 0;
   display: flex;
   flex-direction: column;
-  width: ${props => (props.isExpanded ? '200px' : '52px')};
   height: 100%;
+  padding-top: 16px;
   background-color: #1e272e;
   color: #ffffff;
   overflow-x: hidden;
   overflow-y: auto;
 
   svg {
-    width: 1.25em;
-    height: 1.25em;
-    margin-right: ${props => props.isExpanded ? '12px' : '0'};
-    cursor: pointer;
-    user-select: none;
+    width: 1.5em;
+    height: 1.5em;
   }
-
-  ${Text} {
-    display: ${props => (!props.isExpanded && 'none')};
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  border-bottom: 2px solid #323338;
-`;
-
-const Controls = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
 `;
 
 const NavItem = styled(NavLink)`
   display: flex;
   align-items: center;
-  padding: 12px 16px;
+  padding: 16px 24px;
   color: inherit;
   cursor: pointer;
+  user-select: none;
   transition: background-color 0.2s;
 
   &:hover, &.active {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #1a2127;
+  }
+
+  &.active {
+    box-shadow: 3px 0px 0px inset #ffffff;
   }
 `;
 
@@ -79,35 +60,19 @@ const ToolTip = styled(ReactTooltip)`
   }
 `;
 
-function Sidebar({isExpanded, setIsExpanded}) {
+function Sidebar() {
   return (
-    <SidebarNav isExpanded={isExpanded}>
-      <Header>
-        <Toggler onClick={() => setIsExpanded(!isExpanded)} />
-      </Header>
-      <NavItem to="/dashboard" data-tip="Projects" activeClassName="active" exact>
+    <SidebarNav>
+      <NavItem to="/" data-tip="Home" activeClassName="active" exact>
         <HomeIcon />
-        <Text>Projects</Text>
       </NavItem>
-      <NavItem to="/dashboard/insights" data-tip="Insights" activeClassName="active">
-        <InsightsIcon />
-        <Text>Insights</Text>
+      <NavItem to="/settings" data-tip="Settings" activeClassName="active">
+        <SettingsIcon />
       </NavItem>
-      <NavItem to="/dashboard/inbox" data-tip="Inbox" activeClassName="active">
-        <InboxIcon />
-        <Text>Inbox</Text>
+      <NavItem as="div" data-tip="Log out">
+        <LogoutIcon />
       </NavItem>
-      <Controls>
-        <NavItem to="/dashboard/settings" data-tip="Settings" activeClassName="active">
-          <SettingsIcon />
-          <Text>Settings</Text>
-        </NavItem>
-        <NavItem as="div" data-tip="Log out">
-          <LogoutIcon />
-          <Text>Log out</Text>
-        </NavItem>
-      </Controls>
-      {!isExpanded && <ToolTip effect="solid" place="right" />}
+      <ToolTip effect="solid" place="right" />
     </SidebarNav>
   );
 }
