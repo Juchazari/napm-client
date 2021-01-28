@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
-import { Button } from '../components/Button';
+import { Button, OutlineButton } from '../components/Button';
 
 const LandingPage = styled.div`
   width: 100%;
@@ -14,7 +14,8 @@ const LandingPage = styled.div`
 `;
 
 const ActionButtons = styled.div`
-  min-width: 175px;
+  max-width: 175px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
@@ -25,7 +26,7 @@ function Landing() {
     <LandingPage>
       <Logo size="250" />
       <ActionButtons>
-        <Button as={Link} to="/login">Log in</Button>
+        <OutlineButton as={Link} to="/login">Log in</OutlineButton>
         <Button as={Link} to="/signup">Sign up</Button>
       </ActionButtons>
     </LandingPage>
