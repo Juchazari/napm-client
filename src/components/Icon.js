@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { RiGoogleFill as GoogleIcon } from 'react-icons/ri';
+import { RiCloseFill as CloseIcon } from 'react-icons/ri';
 
 const Wrapper = styled.div`
   width: ${props => (props.size ? `${props.size}px` : '16px')};
@@ -19,6 +20,8 @@ function IconType({ type }) {
   switch (type) {
     case 'google':
       return <GoogleIcon />;
+    case 'close':
+      return <CloseIcon />;
   }
 }
 
