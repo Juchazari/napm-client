@@ -1,25 +1,75 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { EntryBox, EntryTitle, EntryFooter } from '../components/Entry';
-import { InputGroup, Label, Input } from '../components/FormElements';
+import { InputGroup, Label, Input } from '../components/Forms';
 import { Button } from '../components/Button';
-import Logo from '../components/Logo';
+import CloseButton from '../components/CloseButton';
 
-const Page = styled.div`
+const ForgotPage = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 550px 1fr;
+  align-items: center;
+  justify-items: center;
+
+  @media (max-width: 1064px) {
+    grid-template-columns: 450px 1fr;
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    min-height: 0;
+  }
+`;
+
+const Placeholder = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`;
+
+const AuthContent = styled.div`
+  max-width: 500px;
+  width: 100%;
+  padding: 0 32px;
+
+  @media (max-width: 950px) {
+    margin-top: 60px;
+  }
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+`;
+
+const LinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f8f8f8;
-`;
-
-const HomeLink = styled(Link)`
-  margin: 40px 0;
+  margin-top: 32px;
+  color: #959595;
+  font-size: 14px;
 `;
 
 const LoginLink = styled(Link)`
-  margin-left: 8px;
+  margin-left: 4px;
+  color: #4990ED;
+`;
+
+const MessageWrapper = styled.div`
+  text-align: center;
+  color: #959595;
+  margin-bottom: 32px;
 `;
 
 function Forgot() {
@@ -30,33 +80,36 @@ function Forgot() {
   };
 
   return (
-    <Page>
-      <HomeLink to="/">
-        <Logo size="130" />
-      </HomeLink>
-      <EntryBox>
-        <EntryTitle>Forgot password?</EntryTitle>
+    <ForgotPage>
+      <CloseButton as={Link} to="/" />
+      <Placeholder />
+      <AuthContent>
+        <Title>Forgot password?</Title>
+        <MessageWrapper>
+          <p>Not to worry! Enter the email address associeted with your account and we'll send you some instructions.</p>
+        </MessageWrapper>
         <form onSubmit={handleSubmit}>
           <InputGroup>
-            <Label htmlFor="forgot-email">Email Address</Label>
+            <Label htmlFor="forgot-email">Email</Label>
             <Input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               id="forgot-email"
               autoFocus
+              required
             />
           </InputGroup>
-          <Button type="submit" full>Send instructions</Button>
+          <Button full>Send instructions</Button>
         </form>
-        <EntryFooter>
-          <span>
+        <LinksWrapper>
+          <p>
             Return to log in?
             <LoginLink to="/login">Log in</LoginLink>
-          </span>
-        </EntryFooter>
-      </EntryBox>
-    </Page>
+          </p>
+        </LinksWrapper>
+      </AuthContent>
+    </ForgotPage>
   );
 }
 

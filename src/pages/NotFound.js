@@ -1,34 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/logo.svg';
 
-const Container = styled.div`
-  min-height: 100vh;
+const NotFoundPage = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 50px;
-  a {
-    margin-bottom: 16px;
-    svg {
-      width: 150px;
-    }
-  }
-  h1 {
-    font-weight: 400;
-  }
+`;
+
+const Logo = styled(Link)`
+  font-size: 48px;
+  font-weight: 600;
 `;
 
 function NotFound() {
   return (
-    <Container>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <h1>Sorry, that page doesn't exist!</h1>
-    </Container>
+    <NotFoundPage>
+      <Logo to="/">NAPM</Logo>
+      <p>Sorry, that page doesn't exist!</p>
+    </NotFoundPage>
   );
 }
 

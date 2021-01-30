@@ -1,34 +1,41 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Logo from '../components/Logo';
 import { Button, OutlineButton } from '../components/Button';
 
 const LandingPage = styled.div`
-  width: 100%;
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-const ActionButtons = styled.div`
-  max-width: 175px;
+const Logo = styled.h1`
+  font-size: 48px;
+  user-select: none;
+`;
+
+const ButtonsWrapper = styled.div`
+  max-width: 180px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 32px;
+  margin-top: 16px;
 `;
 
 function Landing() {
   return (
     <LandingPage>
-      <Logo size="250" />
-      <ActionButtons>
+      <Logo>NAPM</Logo>
+      <ButtonsWrapper>
         <OutlineButton as={Link} to="/login">Log in</OutlineButton>
         <Button as={Link} to="/signup">Sign up</Button>
-      </ActionButtons>
+      </ButtonsWrapper>
     </LandingPage>
   );
 }

@@ -20,7 +20,7 @@ const StyledSidebar = styled.div`
   flex-direction: column;
   height: 100%;
   padding-top: 16px;
-  background-color: #1e272e;
+  background-color: #252525;
   color: #ffffff;
   overflow-x: hidden;
   overflow-y: auto;
@@ -42,7 +42,7 @@ const NavItem = styled(NavLink)`
   user-select: none;
 
   &:hover, &.active {
-    background-color: #1a2127;
+    background-color: #2c2c2c;
   }
 
   &.active {

@@ -4,7 +4,7 @@ export const Label = styled.label`
   display: inline-block;
   margin-bottom: ${props => (props.mb && props.mb)};
   font-size: 14px;
-  color: #888888;
+  color: #959595;
 `;
 
 Label.defaultProps = {

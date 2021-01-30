@@ -9,12 +9,17 @@ export const GlobalStyle = createGlobalStyle`
     appearance: none;
     text-decoration: none;
   }
+  
   body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: #333;
+    color: #252525;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior: none;
+  }
+
+  a {
+    color: inherit;
   }
 `;

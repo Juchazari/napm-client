@@ -3,50 +3,43 @@ import styled from 'styled-components';
 export const Button = styled.button`
   min-width: 64px;
   width: ${props => (props.full && '100%')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   border-radius: 4px;
   padding: 8px 16px;
-  outline: none;
-  background-color: #2c2e33;
-  color: #ffffff;
-  font-size: 0.875rem;
-  font-weight: 500;
+  background-color: #252525;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.02857rem;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
+  user-select: none;
+  transition: background-color 0.2s;
 
   &:hover {
-    background-color: #363942;
+    background-color: #2C2C2C;
   }
 `;
 
 export const OutlineButton = styled(Button)`
-  background-color: #ffffff;
-  border: 1px solid #2c2e33;
-  color: #333;
+  border: 2px solid #252525;
+  padding: 6px 14px;
+  background-color: #FFFFFF;
+  color: #252525;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: #F9F9F9;
   }
 `;
 
 export const GoogleButton = styled(Button)`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
-  color: #333;
-
-  svg {
-    margin-right: 8px;
-    width: 1.25em;
-    height: 1.25em;
-  }
+  background-color: #1A73E8;
+  color: #FFFFFF;
 
   &:hover {
-    background-color: transparent;
-    border-color: #d0d0d0;
+    background-color: #2A7DEA;
   }
 `;
