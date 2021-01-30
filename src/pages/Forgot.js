@@ -1,29 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { InputGroup, Label, Input } from '../components/Forms';
+import {
+  Page,
+  Content,
+  Title,
+  LinksWrapper,
+  HomeButton,
+  PageLink } from '../components/LSF';
+import { InputGroup, Input, Label } from '../components/Forms';
 import { Button } from '../components/Button';
-import CloseButton from '../components/CloseButton';
-
-const ForgotPage = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 550px 1fr;
-  align-items: center;
-  justify-items: center;
-
-  @media (max-width: 1064px) {
-    grid-template-columns: 450px 1fr;
-  }
-
-  @media (max-width: 950px) {
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-    min-height: 0;
-  }
-`;
+import Icon from '../components/Icon';
 
 const Placeholder = styled.div`
   width: 100%;
@@ -33,37 +20,6 @@ const Placeholder = styled.div`
   @media (max-width: 950px) {
     display: none;
   }
-`;
-
-const AuthContent = styled.div`
-  max-width: 500px;
-  width: 100%;
-  padding: 0 32px;
-
-  @media (max-width: 950px) {
-    margin-top: 60px;
-  }
-`;
-
-const Title = styled.h1`
-  text-align: center;
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 8px;
-`;
-
-const LinksWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 32px;
-  color: #959595;
-  font-size: 14px;
-`;
-
-const LoginLink = styled(Link)`
-  margin-left: 4px;
-  color: #4990ED;
 `;
 
 const MessageWrapper = styled.div`
@@ -80,10 +36,12 @@ function Forgot() {
   };
 
   return (
-    <ForgotPage>
-      <CloseButton as={Link} to="/" />
+    <Page>
+      <HomeButton as={Link} to="/">
+        <Icon type="close" size="24" />
+      </HomeButton>
       <Placeholder />
-      <AuthContent>
+      <Content>
         <Title>Forgot password?</Title>
         <MessageWrapper>
           <p>Not to worry! Enter the email address associeted with your account and we'll send you some instructions.</p>
@@ -105,11 +63,11 @@ function Forgot() {
         <LinksWrapper>
           <p>
             Return to log in?
-            <LoginLink to="/login">Log in</LoginLink>
+            <PageLink as={Link} to="/login">Log in</PageLink>
           </p>
         </LinksWrapper>
-      </AuthContent>
-    </ForgotPage>
+      </Content>
+    </Page>
   );
 }
 
