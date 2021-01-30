@@ -43,3 +43,22 @@ export const GoogleButton = styled(Button)`
     background-color: #2A7DEA;
   }
 `;
+
+export const IconButton = styled.button`
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 4px;
+  background-color: #ededed;
+  color: #2C2C2C;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+`;
