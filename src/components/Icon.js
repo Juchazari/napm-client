@@ -1,6 +1,15 @@
 import styled from 'styled-components';
-import { RiGoogleFill as GoogleIcon } from 'react-icons/ri';
-import { RiCloseFill as CloseIcon } from 'react-icons/ri';
+import {
+  RiGoogleFill as GoogleIcon,
+  RiCloseFill as CloseIcon,
+  RiDashboardFill as DashboardIcon,
+  RiSettings3Fill as SettingsIcon,
+  RiLogoutBoxRFill as LogoutIcon
+} from 'react-icons/ri';
+
+// RiMenuLine
+// RiPieChartFill
+// RiNotification3Fill
 
 const Wrapper = styled.div`
   width: ${props => (props.size ? `${props.size}px` : '16px')};
@@ -22,6 +31,12 @@ function IconType({ type }) {
       return <GoogleIcon />;
     case 'close':
       return <CloseIcon />;
+    case 'dashboard':
+      return <DashboardIcon />;
+    case 'settings':
+      return <SettingsIcon />;
+    case 'logout':
+      return <LogoutIcon />;
   }
 }
 
