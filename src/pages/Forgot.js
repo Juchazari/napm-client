@@ -22,6 +22,10 @@ const Placeholder = styled.div`
   }
 `;
 
+const ForgotTitle = styled(Title)`
+  margin-bottom: 8px;
+`;
+
 const MessageWrapper = styled.div`
   text-align: center;
   color: #959595;
@@ -42,7 +46,7 @@ function Forgot() {
       </HomeButton>
       <Placeholder />
       <Content>
-        <Title>Forgot password?</Title>
+        <ForgotTitle>Forgot password?</ForgotTitle>
         <MessageWrapper>
           <p>Not to worry! Enter the email address associeted with your account and we'll send you some instructions.</p>
         </MessageWrapper>
