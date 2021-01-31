@@ -53,7 +53,7 @@ export const IconButton = styled.button`
   border: 0;
   border-radius: 4px;
   background-color: #ededed;
-  color: #2C2C2C;
+  color: #252525;
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s;
