@@ -48,7 +48,7 @@ function Forgot() {
       <Content>
         <ForgotTitle>Forgot password?</ForgotTitle>
         <MessageWrapper>
-          <p>Not to worry! Enter the email address associeted with your account and we'll send you some instructions.</p>
+          <p>Not to worry! Enter the email address associated with your account and we'll send you some instructions.</p>
         </MessageWrapper>
         <form onSubmit={handleSubmit}>
           <InputGroup>

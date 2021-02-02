@@ -4,7 +4,8 @@ import {
   RiCloseFill as CloseIcon,
   RiDashboardFill as DashboardIcon,
   RiSettings3Fill as SettingsIcon,
-  RiLogoutBoxRFill as LogoutIcon
+  RiLogoutBoxRFill as LogoutIcon,
+  RiMore2Fill as MoreOptionsIcon
 } from 'react-icons/ri';
 
 // RiMenuLine
@@ -37,6 +38,8 @@ function IconType({ type }) {
       return <SettingsIcon />;
     case 'logout':
       return <LogoutIcon />;
+    case 'options':
+      return <MoreOptionsIcon />;
   }
 }
 

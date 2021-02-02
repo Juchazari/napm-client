@@ -12,8 +12,10 @@ const StyledSidebar = styled.div`
   flex-direction: column;
   height: 100%;
   padding-top: 16px;
-  background-color: #121212;
+  // background-color: #121212;
+  background-color: #1b1d21;
   color: #ffffff;
+  z-index: 9999;
 `;
 
 const NavItem = styled(NavLink)`
@@ -27,22 +29,19 @@ const NavItem = styled(NavLink)`
   cursor: pointer;
   user-select: none;
 
-  &:hover, &.active {
-    background-color: #1a1a1a;
-  }
-
   &.active {
-    box-shadow: 3px 0px 0px inset #1A73E8;
+    box-shadow: 3px 0px 0px inset #FFFFFF;
   }
 `;
 
 const ToolTip = styled(ReactTooltip)`
   font-size: 12px !important;
   padding: 5px 10px !important;
-  background-color: #252525 !important;
+  background-color: #1A1A1A !important;
+  opacity: 1 !important;
 
   &.place-right:after {
-    border-right-color: #252525 !important;
+    border-right-color: #1A1A1A !important;
     border-right-style: solid !important;
   }
 `;
