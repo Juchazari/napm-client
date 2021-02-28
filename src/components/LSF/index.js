@@ -52,7 +52,7 @@ export const Title = styled.h1`
   margin-bottom: 32px;
 `;
 
-export const HomeButton = styled(IconButton)`
+export const CloseButton = styled(IconButton)`
   position: absolute;
   top: 10px;
   right: 10px;
