@@ -6,7 +6,7 @@ import {
   Content,
   Title,
   LinksWrapper,
-  HomeButton,
+  CloseButton,
   PageLink } from '../components/LSF';
 import { InputGroup, Input, Label } from '../components/Forms';
 import { Button, GoogleButton } from '../components/Button';
@@ -37,14 +37,14 @@ function Login() {
 
   return (
     <Page>
-      <HomeButton as={Link} to="/">
-        <Icon type="close" size="24" />
-      </HomeButton>
+      <CloseButton as={Link} to="/">
+        <Icon glyph="close" size="24" />
+      </CloseButton>
       <Placeholder />
       <Content>
         <Title>Log in to Napm</Title>
         <GoogleButton full>
-          <Icon type="google" mr="8" />
+          <Icon glyph="google" size="16" mr="8" />
           Continue with Google
         </GoogleButton>
         <Divider>OR</Divider>

@@ -1,9 +1,8 @@
 import React from 'react'
+import styled from 'styled-components';
 
 function Project() {
-  return (
-    <h1>A Single Project</h1>
-  );
+  return null;
 }
 
 export default Project;
