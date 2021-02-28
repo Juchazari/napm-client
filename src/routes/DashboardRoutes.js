@@ -1,21 +1,17 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Projects from '../pages/Projects';
+import DashHome from '../pages/DashHome';
 import Project from '../pages/Project';
-import Settings from '../pages/Settings';
 import NotFound from '../pages/NotFound';
 
 function DashboardRoutes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Projects />
+        <DashHome />
       </Route>
-      <Route path="/projects/:projectId">
+      <Route path="/projects/:id">
         <Project />
-      </Route>
-      <Route path="/settings">
-        <Settings />
       </Route>
       <Route path="/login">
         <Redirect to="/" />
