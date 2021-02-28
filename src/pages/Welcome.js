@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, OutlineButton } from '../components/Button';
+import { Button } from '../components/Button';
 
 const LandingPage = styled.div`
   position: absolute;
@@ -33,7 +33,7 @@ function Landing() {
     <LandingPage>
       <Logo>NAPM</Logo>
       <ButtonsWrapper>
-        <OutlineButton as={Link} to="/login">Log in</OutlineButton>
+        <Button as={Link} to="/login">Log in</Button>
         <Button as={Link} to="/signup">Sign up</Button>
       </ButtonsWrapper>
     </LandingPage>

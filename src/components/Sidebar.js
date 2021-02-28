@@ -1,65 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import ReactTooltip from 'react-tooltip';
+import { IconButton } from './Button';
 import Icon from './Icon';
 
-const StyledSidebar = styled.div`
-  position: fixed;
+const SidebarNav = styled.nav`
+  width: 56px;
+  position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding-top: 16px;
-  // background-color: #121212;
-  background-color: #1b1d21;
+  padding: 8px 0;
+  background-color: #1c1a22;
   color: #ffffff;
   z-index: 9999;
 `;
 
-const NavItem = styled(NavLink)`
+const Item = styled.div`
+  position: relative;
+  width: 56px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: none;
-  padding: 16px 24px;
-  background-color: inherit;
-  color: inherit;
-  cursor: pointer;
-  user-select: none;
+  margin-bottom: 8px;
+`;
 
-  &.active {
-    box-shadow: 3px 0px 0px inset #FFFFFF;
+const Project = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #2e2b3a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  &.active:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 4px;
+    height: 100%;
+    border-radius: 0 2px 2px 0;
+    background-color: #ffffff;
   }
 `;
 
-const ToolTip = styled(ReactTooltip)`
-  font-size: 12px !important;
-  padding: 5px 10px !important;
-  background-color: #1A1A1A !important;
-  opacity: 1 !important;
+const Divider = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
 
-  &.place-right:after {
-    border-right-color: #1A1A1A !important;
-    border-right-style: solid !important;
+  &:before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #2e2b3a;
+  }
+`;
+
+const AddButton = styled(IconButton)`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2e2b3a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: #353242;
   }
 `;
 
 function Sidebar() {
   return (
-    <StyledSidebar>
-      <NavItem to="/" data-tip="Home" activeClassName="active" exact>
-        <Icon type="dashboard" size="20" />
-      </NavItem>
-      <NavItem to="/settings" data-tip="Settings" activeClassName="active">
-        <Icon type="settings" size="20" />
-      </NavItem>
-      <NavItem as="button" data-tip="Log out">
-        <Icon type="logout" size="20" />
-      </NavItem>
-      <ToolTip effect="solid" place="right" />
-    </StyledSidebar>
+    <SidebarNav>
+      <Item>
+        <Project />
+      </Item>
+      <Item>
+        <Project />
+      </Item>
+      <Item>
+        <Project />
+      </Item>
+      <Divider />
+      <Item>
+        <AddButton onClick={() => alert("NEW PROJECT!")}>
+          <Icon glyph="add" size="24" />
+        </AddButton>
+      </Item>
+    </SidebarNav>
   );
 }
 

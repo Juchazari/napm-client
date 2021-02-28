@@ -1,16 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Landing from '../pages/Landing';
+import Welcome from '../pages/Welcome';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Forgot from '../pages/Forgot';
 import NotFound from '../pages/NotFound';
 
-function LandingRoutes() {
+function WelcomeRoutes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Landing />
+        <Welcome />
       </Route>
       <Route path="/login">
         <Login />
@@ -28,4 +28,4 @@ function LandingRoutes() {
   );
 }
 
-export default LandingRoutes;
+export default WelcomeRoutes;

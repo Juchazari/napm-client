@@ -1,11 +1,11 @@
 import React from 'react';
-import LandingRoutes from './routes/LandingRoutes';
+import WelcomeRoutes from './routes/WelcomeRoutes';
 import Dashboard from './pages/Dashboard';
 
 function App() {
   const isAuthenticated = true;
 
-  return isAuthenticated ? <Dashboard /> : <LandingRoutes />;
+  return isAuthenticated ? <Dashboard /> : <WelcomeRoutes />;
 }
 
 export default App;

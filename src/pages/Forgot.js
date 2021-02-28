@@ -6,7 +6,7 @@ import {
   Content,
   Title,
   LinksWrapper,
-  HomeButton,
+  CloseButton,
   PageLink } from '../components/LSF';
 import { InputGroup, Input, Label } from '../components/Forms';
 import { Button } from '../components/Button';
@@ -41,9 +41,9 @@ function Forgot() {
 
   return (
     <Page>
-      <HomeButton as={Link} to="/">
-        <Icon type="close" size="24" />
-      </HomeButton>
+      <CloseButton as={Link} to="/">
+        <Icon glyph="close" size="24" />
+      </CloseButton>
       <Placeholder />
       <Content>
         <ForgotTitle>Forgot password?</ForgotTitle>
