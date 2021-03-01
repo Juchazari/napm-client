@@ -5,9 +5,3 @@ Napm was created to make project managing simple and easy. With much inspiration
 * Manage your projects big or small
 * Collaborate with others
 * Unique experience with full customization and theming
-
-### Technologies used to build Napm:
-* AWS API Gateway, Lambda, Cognito, DynamoDB, S3
-* React
-* React-router
-* Styled-components
